@@ -1,0 +1,10 @@
+[Unit]
+Description=Valkey Kernel Tweaks
+Before=valkey.service
+
+[Service]
+User=root
+ExecStart=/sbin/sysctl vm.overcommit_memory=1
+
+[Install]
+RequiredBy=valkey.service

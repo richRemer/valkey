@@ -1,0 +1,13 @@
+[Unit]
+Description=Valkey In-Memory Database
+
+[Service]
+Type=notify
+Environment=VALKEY_CONF=/etc
+
+ExecStart=/usr/local/bin/valkey-server ${VALKEY_CONF}/valkey.conf
+RestartSec=5s
+Restart=on-success
+
+[Install]
+WantedBy=multi-user.target
